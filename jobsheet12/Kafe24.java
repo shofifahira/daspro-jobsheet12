@@ -24,17 +24,25 @@ public class Kafe24 {
         System.out.println("Silakan pilih menu yang Anda inginkan.");
     }
 
+    public static int hitungTotalHarga24(int pilihanMenu, int banyakItem) {
+        int[]hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
+
+        int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
+        return hargaTotal;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Menu("Andi", true, 15);
 
-        System.out.print("Nama pelanggan : ");
-        String nama = sc.nextLine();
-        System.out.print("Member (y/n)   : ");
-        boolean isMember = sc.next(). equalsIgnoreCase("y");
-        System.out.print("Jam kunjung    : ");
-        int jam = sc.nextInt();
+        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+        int pilihanMenu = sc.nextInt();
+        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+        int banyakItem = sc.nextInt();
 
-        Menu(nama, isMember, jam);
+        int totalBayar = hitungTotalHarga24(pilihanMenu, banyakItem);
+
+        System.out.println("Total harga untuk pesanan Anda: Rp" + totalBayar);
 
         sc.close();
     }
