@@ -1,8 +1,7 @@
 package jobsheet12;
 
-import java.util.Scanner;
-
 public class HitungBalok24 {
+
     static int hitungLuas(int pjg, int lb) {
         int Luas = pjg * lb;
         return Luas;
@@ -13,34 +12,22 @@ public class HitungBalok24 {
         return volume;
     }
 
-    static int selisih(int a, int b) {
-        return a - b;
+    static int hitungLuasPermukaanBalok(int p, int l, int t) {
+        return 2 * (hitungLuas(p, l) + hitungLuas(p, t) + hitungLuas(l, t));
     }
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int p, l, t, L, vol;
+        
+        System.out.println("Balok 1 (4 x 3 x 5)");
+        System.out.println("Luas permukaan : " + hitungLuasPermukaanBalok(4, 3, 5));
+        System.out.println("Volume         : " + hitungVolume(5, 4, 3));
 
-        System.out.println("Masukkan panjang");
-        p = input.nextInt();
+        System.out.println("\nBalok 2 (6 x 2 x 4)");
+        System.out.println("Luas permukaan : " + hitungLuasPermukaanBalok(6, 2, 4));
+        System.out.println("Volume         : " + hitungVolume(4, 6, 2));
 
-        System.out.println("Masukkan lebar");
-        l = input.nextInt();
-
-        System.out.println("Masukkan tinggi");
-        t = input.nextInt();
-
-        L = hitungLuas(p, l);
-        System.out.println("Luas Persegi Panjang adalah " + L);
-
-        vol = hitungVolume(t, p, l);
-        System.out.println("Volume (t, p, l) adalah " + vol);
-
-        vol = hitungVolume(p, l, t);
-        System.out.println("Volume (p, l, t) adalah " + vol);
-
-        System.out.println("selisih(10, 3) = " + selisih(10, 3));
-        System.out.println("selisih(3, 10) = " + selisih(3, 10));
-
-        input.close();
+        System.out.println("\nBalok 3 (10 x 5 x 3)");
+        System.out.println("Luas permukaan : " + hitungLuasPermukaanBalok(10, 5, 3));
+        System.out.println("Volume         : " + hitungVolume(3, 10, 5));
     }
 }
